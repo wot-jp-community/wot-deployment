@@ -79,7 +79,7 @@ rpi-gpio inノードの出力をそのままLEDへの入力として使っても
 ## Web APIの設計
 
 LEDランプというモノができたところで、次はネットワーク経由でモノを操作可能とするためのインタフェースを作ります。
-最低限のインタフェースとしては下記が必要かと思われます:
+最低限のインタフェースとしては下記が必要です:
 - LEDの状態を取得する
 - LEDの状態を変える
 - スイッチを押すことを模擬する
@@ -94,7 +94,7 @@ LEDランプというモノができたところで、次はネットワーク�
 
 ### LEDの状態を変える
 LEDの状態取得と同じく、`/led`に対してPUTを行うことで
-LEDの状態を変えるようにします。PUTのペイロードのフォーマットは、
+LEDの状態を変えられるようにします。PUTのペイロードのフォーマットは、
 GETと同じくJSONで`{"value": LEDの状態}`(LEDの状態は0/1)という
 形式とします。
 
@@ -131,12 +131,12 @@ $ curl http://localhost:1880/led
 $ curl -X PUT -d '{"value":1}' -H 'content-type:application/json' http://localhost:1880/led
 {"value":1}   # LEDが点灯する
  
-$ curl -X POST -u wot:wot-pf  http://localhost:1880/toggle
+$ curl -X POST http://localhost:1880/toggle
 # LEDが消灯する
 
 $ wscat -c http://localhost:1880/toggled
 Connected (press CTRL+C to quit)
-< {"value":1}     # スイッチを押すごとに通知が帰ってくる
+< {"value":1}     # スイッチを押すごとに通知される
 < {"value":0}
 ```
 
@@ -151,7 +151,7 @@ Web of Thingsでは、上記の仕様をThing Descriptionという
 
 詳細な仕様は[Web of Things (WoT) Thing Description](https://www.w3.org/TR/wot-thing-description/)にあります。
 
-Thing DescriptionはJSON-LDをベースとしたフォーマットになっています。ここまでに作成したモノのThing Descriptionをみていきます。
+Thing DescriptionはJSON-LDをベースとしたフォーマットになっています。ここまでに作成したモノのThing Descriptionをみていきます([Thing Description全体のダウンロード](./raspithingtd.jsonld))。
 
 ```javascript
 {
@@ -279,7 +279,8 @@ Thing DescriptionはJSON-LDをベースとしたフォーマットになって�
         { "saref": "https://w3id.org/saref#" }
     ],
     "@type": [
-        "saref:Light",
+        "saref:Lighting device",
+        "saref:LightSwitch"
     ]
     ...
 ```
@@ -304,6 +305,7 @@ Node Generatorは、Thing DescriptionからNode-REDのノードを
 
 ![ノードの設定](images/config.png)
 
+Thing Descriptionに記載した説明('LED status'など)が設定UI内で使われていることが分かります。
 このように、モノの仕様を機械可読なフォーマットで記述することによって、
 モノを利用する側でも簡単にアプリケーションが作成できるようになります。
 
