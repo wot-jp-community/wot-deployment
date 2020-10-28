@@ -10,7 +10,8 @@
 - 実装事例紹介
   - [RaspberryPiでThingを作る](raspithing.md)
 
-- [Web of Things関連文書](recs.md)
+- 関連文書
+  - [Web of Things関連文書](recs.md)
 
 - Plugfest開催ガイドライン
   - Plugfestの目的/手順

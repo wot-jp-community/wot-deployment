@@ -1,4 +1,4 @@
-# Web of Things 関連文書
+# W3C勧告など
 
 ## W3C勧告(Recommendation)
 
