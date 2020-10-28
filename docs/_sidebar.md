@@ -11,7 +11,7 @@
   - [RaspberryPiでThingを作る](raspithing.md)
 
 - 関連文書
-  - [Web of Things関連文書](recs.md)
+  - [W3C勧告など](recs.md)
 
 - Plugfest開催ガイドライン
   - Plugfestの目的/手順
