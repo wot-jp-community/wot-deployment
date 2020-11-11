@@ -11,6 +11,7 @@ Thing Descriptionを作って適切なアクセス制御をのもとで公開す
 知ることを"ThingをConsumeする"といいます。
 
 ![Thing と Thing Descriptionの関係](https://www.w3.org/TR/wot-architecture/images/architecture/servient-consumer-thing.svg)
+(出典:[Web of Things (WoT) Architecture: Figure 23 High-level architecuture of Consumer and Thing](https://www.w3.org/TR/wot-architecture/#high-level-application-device))
 
 ## Thingを作る/WoT対応にするには?
 
