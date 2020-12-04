@@ -15,8 +15,22 @@
       name: 'WoT Deployment Portal',
       repo: 'wot-jp-community/wot-deployment',
       loadSidebar: true,
-      subMaxLevel: 4
-    }
+      subMaxLevel: 4,
+      plugins: [
+        function(hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span>本WebページはWeb of Things日本デベロッパコミュニティグループにより作成されました。本グループは総務省による支援を受けて活動しています。</span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+            return html + footer;
+          });
+        }
+      ]
+    };
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
 </body>
