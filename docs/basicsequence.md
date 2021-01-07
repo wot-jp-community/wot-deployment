@@ -53,7 +53,66 @@ Thing Descriptionで記載すると下記のようになります(properties部�
 
 ## Action
 
-TBD
+Actionでは、Thingに対してなんらかの動作を指示したり、Thingが持つ機能を実行させる操作を記述します。
+例えば、LEDランプのスイッチをトグルする、スピーカから合成音声を音声を鳴らす、といった操作がこれにあたります。
+
+Actionのシーケンス例を下記に示します。
+
+![Actionのシーケンス例](images/seq-action.svg)
+
+ここでは、ConsumerがPOSTリクエストでLEDのランプのスイッチをトグルしています。
+POSTリクエストと返答に含まれるボディ部は使っていません。
+この相互作用の仕方をThing Descriptionで記述すると下記のようになります。
+
+```JSON
+{
+    //
+    "actions": {
+        "toggle": {
+            "forms": [{
+                "href": "https://mylamp.example.com/toggle"
+            }]
+        }
+    }
+}
+
+```
+この記述は:
+- このThingは"toggle"というアクションを受け付ける
+- このアクションの起動によってThingの属性値が変わる可能性がある(デフォルト値より)
+- このアクションの起動は冪等(idempotent)な操作ではない(デフォルト値よる)
+- アクションを起動する際のHTTPメソッドは`POST`(デフォルト値より)
+
+ということを意味しています。
+
+なお、ここではPOSTメソッドでアクションを実行していますが、Thingの実装によっては属性値の取得(GET)を契機にアクションを起動したり、属性値を書き換える(PUT)ことによってアクションを起動することがあるかもしれません。
+この場合、前節で述べたpropertyの読み書きとしてアクションを記述することもできますが、
+Thingの利用者にとってそれがなんらかの動作として抽象化した方がいい場合はアクションとして記述することをお勧めします。
+たとえば、`https://mylamp.example.com/invokeaction`というURLにPUTリクエストで`{"action": "toggle"}`を書き込むと
+動作が起動する場合、書き込み可能な属性値として抽象化するより、アクションの起動として抽象化したほうが
+Thingの利用者にわかりやすくなります。
+このような場合のThing Descriptionの記述は下記のようになります。
+```JSON
+{
+    // ...
+    "actions": {
+        "toggle": {
+            "input": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "const": "toggle"
+                    }
+                }
+            },
+            "forms": [{
+                "href": "https://mylamp.example.com/invokeaction",
+                "htv:methodName": "PUT"
+            }]
+        }
+    }
+}
+```
 
 ## Event
 
