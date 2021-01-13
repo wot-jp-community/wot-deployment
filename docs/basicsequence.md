@@ -5,6 +5,8 @@ Eventの3つに抽象化しています。理論的には、これらの相互�
 対して記述可能な任意のプロトコルを利用することができますが、
 ここではHTTPを使った場合の典型的なシーケンスとThing Descriptionの記述を示します。
 
+<!-- Property, Action, Eventの簡単な説明をここに書く -->
+
 ## Property
 
 Propertyでは、Thingがもつ属性値を読み書きする操作を記述します。
