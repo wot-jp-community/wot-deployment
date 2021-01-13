@@ -1,6 +1,9 @@
 - はじめに
   - [Web of Thingsについて](about.md)
 
+- WoT入門
+  - [WoTの基本的なやりとり](basicsequence.md)
+
 - 開発支援ツール紹介/チュートリアル
   - node-wot
   - Node Generator
