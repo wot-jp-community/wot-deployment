@@ -4,14 +4,14 @@
 - WoT入門
   - [WoTの基本的なやりとり](basicsequence.md)
 
-- 開発支援ツール紹介/チュートリアル
-  - node-wot
-  - Node Generator
-  - TD Playground
+- チュートリアル
+  - Thingを作ってみよう
+    - [RaspberryPiでThingを作る](raspithing.md)
+  - Thingを動かしてみよう
+    - [Node Generator for Node-REDを使ったThingの操作](nodegen-tutorial.md)
   - その他の情報
-
-- 実装事例紹介
-  - [RaspberryPiでThingを作る](raspithing.md)
+    - TD Playground
+    - node-wot 
 
 - 関連文書
   - [W3C勧告など](recs.md)
