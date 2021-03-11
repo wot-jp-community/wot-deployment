@@ -1,17 +1,17 @@
 # WoT Deployment Task Force
 
-TBD
+本リポジトリは WoT 検討会の WoT Deployment Task Force で利用しているリポジトリです。現在のところ、主に開発者をターゲットに、WoTを使った基本的なデバイス/アプリを作成するために必要な情報を提供する 「Web of Thingsデプロイメントポータル」 を提供しております。
 
-## WoTデプロイメントポータル(案)
+## WoTデプロイメントポータル
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d80259bd-f6de-4b53-8472-7a728694a5af/deploy-status)](https://app.netlify.com/sites/wot-deployment/deploys)
 
 https://wot-deployment.netlify.app/
 
-現在は仮に DP TF でコンテンツを執筆開始していますが、他の TF と横断で集約したり、コミュニティサイトとして発展させるなどの可能性もあり。
+現在は仮に DP TF でコンテンツを執筆開始していますが、他の TF と横断で集約したり、コミュニティサイトとして発展させることを意図しています。
 
 - 構成
-  - [Docsify](https://docsify.js.org/) によるシンプルなサイト
+  - [Docsify](https://docsify.js.org/) によるシンプルなサイトです。
   - index.html 単独動作、Markdown ファイル `xxxxx.md` に書いた記事を URL フラグメントで `/#/xxxxx` として読み込む構成
   - コンテンツは全て普通の Markdown なので任意のモダンなフレームワークによるサイトにいつでも変換可能
 - デプロイ
