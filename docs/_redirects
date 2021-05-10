@@ -1,0 +1,2 @@
+# redirect old WoT Deployment TF site to new WoT JP CG site
+https://wot-deployment.netlify.app/*  https://wot-jp-cg.netlify.app/:splat 301!
