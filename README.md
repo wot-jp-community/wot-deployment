@@ -6,9 +6,9 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d80259bd-f6de-4b53-8472-7a728694a5af/deploy-status)](https://app.netlify.com/sites/wot-deployment/deploys)
 
-https://wot-deployment.netlify.app/
+https://wot-deployment.netlify.app/ (https://wot-jp-cg.netlify.app へのリダイレクト)
 
-現在は仮に DP TF でコンテンツを執筆開始していますが、他の TF と横断で集約したり、コミュニティサイトとして発展させることを意図しています。
+DP TF でコンテンツを執筆開始しましたが、docs 配下のドキュメントは https://github.com/w3c/wot-jp-cg に移管しこちらでは更新停止中、WoT JP CG サイトにリダイレクト設定している状態です。
 
 - 構成
   - [Docsify](https://docsify.js.org/) によるシンプルなサイトです。
